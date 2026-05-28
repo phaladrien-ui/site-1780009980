@@ -1,0 +1,493 @@
+Voici le code HTML5 complet pour une landing page e-commerce de montres de luxe, design luxe et responsive.
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Horloge d'Exception | Montres de Luxe</title>
+  <!-- Google Fonts : Playfair Display + Cormorant Garamond pour l'élégance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (gratuit) pour icônes raffinées -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ----- RESET & BASE LUXE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0a0a;
+      background-image: radial-gradient(circle at 10% 20%, #1a1818 0%, #0a0909 90%);
+      color: #eae3d9;
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 300;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    /* typographie luxe */
+    h1, h2, h3, h4, .logo, .btn, .prix, .menu-link {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .sous-titre, .description, .detail, .info-produit {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ----- HEADER ÉLÉGANT ----- */
+    header {
+      padding: 1.8rem 0 1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      background: linear-gradient(180deg, #0f0e0d 0%, transparent 100%);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(3px);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #d4af37;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+      transition: opacity 0.3s;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #c0b39b;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      margin-left: 6px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .menu-link {
+      color: #c9bfb0;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+      transition: 0.25s ease;
+    }
+    .menu-link:hover {
+      color: #d4af37;
+      border-bottom-color: #d4af37;
+    }
+
+    .icone-panier {
+      font-size: 1.6rem;
+      color: #d4af37;
+      transition: transform 0.2s;
+    }
+    .icone-panier:hover {
+      transform: scale(1.1);
+      color: #e6c25e;
+    }
+
+    /* ----- HERO SECTION (luxe visuel) ----- */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 0 4rem;
+      gap: 2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    }
+
+    .hero-texte {
+      flex: 1 1 380px;
+    }
+
+    .hero-texte h1 {
+      font-size: 3.8rem;
+      line-height: 1.1;
+      font-weight: 700;
+      color: #f5efe6;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+      margin-bottom: 1rem;
+    }
+    .hero-texte h1 i {
+      color: #d4af37;
+      font-size: 3rem;
+      margin-right: 8px;
+    }
+
+    .hero-sous-titre {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #c8bca8;
+      margin-bottom: 1.8rem;
+      border-left: 3px solid #d4af37;
+      padding-left: 1.2rem;
+    }
+
+    .hero-description {
+      font-size: 1.3rem;
+      max-width: 500px;
+      color: #b8ad9a;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .btn-luxe {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #d4af37;
+      color: #d4af37;
+      padding: 1rem 3.2rem;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+      cursor: pointer;
+      background: rgba(212, 175, 55, 0.03);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
+    }
+    .btn-luxe:hover {
+      background: #d4af37;
+      color: #0b0a0a;
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1 1 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 4px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(212, 175, 55, 0.1);
+      transition: transform 0.6s ease, box-shadow 0.4s;
+      filter: brightness(0.95) contrast(1.1);
+    }
+    .hero-image img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 0 2px rgba(212, 175, 55, 0.2);
+    }
+
+    /* ----- SECTION MONTRES (grille luxe) ----- */
+    .section-montres {
+      padding: 4rem 0 3rem;
+    }
+
+    .section-titre {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 6px;
+    }
+    .section-sous-titre {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #a89f8c;
+      font-style: italic;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      padding-bottom: 1.5rem;
+    }
+
+    .grille-montres {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .carte-montre {
+      background: linear-gradient(145deg, #141212, #1c1918);
+      border: 1px solid #2b2724;
+      padding: 1.8rem 1.5rem 2rem;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .carte-montre:hover {
+      border-color: #d4af37;
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(212, 175, 55, 0.2);
+    }
+
+    .carte-montre img {
+      width: 100%;
+      max-width: 220px;
+      margin: 0 auto 1.2rem;
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.7));
+      transition: transform 0.4s;
+    }
+    .carte-montre:hover img {
+      transform: scale(1.03);
+    }
+
+    .nom-montre {
+      font-size: 1.8rem;
+      color: #ede3d3;
+      margin-bottom: 0.2rem;
+      font-weight: 600;
+    }
+    .detail-montre {
+      color: #b5a992;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+    .prix {
+      font-size: 2rem;
+      color: #d4af37;
+      font-weight: 700;
+      margin: 0.8rem 0 1.2rem;
+      letter-spacing: 2px;
+    }
+    .prix small {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #8f8575;
+      margin-left: 6px;
+    }
+
+    .btn-carte {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 0.7rem 2rem;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: 0.25s;
+      cursor: pointer;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+    .btn-carte:hover {
+      background: #d4af37;
+      color: #0b0a0a;
+    }
+
+    /* ----- SECTION AVANTAGES / LUXE ----- */
+    .section-avant {
+      background: rgba(20, 18, 16, 0.6);
+      backdrop-filter: blur(2px);
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      padding: 3.5rem 0;
+      margin: 1rem 0;
+    }
+
+    .grille-avantages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .avantage-item {
+      padding: 1rem 0.5rem;
+    }
+    .avantage-item i {
+      font-size: 2.8rem;
+      color: #d4af37;
+      margin-bottom: 0.8rem;
+    }
+    .avantage-item h4 {
+      font-size: 1.5rem;
+      color: #e8dfd0;
+      margin-bottom: 0.3rem;
+    }
+    .avantage-item p {
+      color: #a89f8c;
+      font-size: 1.1rem;
+    }
+
+    /* ----- SECTION NEWSLETTER (élégante) ----- */
+    .newsletter {
+      padding: 3.5rem 0 4rem;
+      text-align: center;
+    }
+    .newsletter h2 {
+      font-size: 2.4rem;
+      color: #d4af37;
+      letter-spacing: 4px;
+    }
+    .newsletter p {
+      font-size: 1.3rem;
+      color: #b8ad9a;
+      margin: 0.5rem 0 2rem;
+    }
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .newsletter-form input {
+      flex: 2 1 260px;
+      padding: 1rem 1.5rem;
+      background: #1c1918;
+      border: 1px solid #3a3530;
+      color: #eae3d9;
+      font-size: 1.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      outline: none;
+      transition: 0.3s;
+    }
+    .newsletter-form input:focus {
+      border-color: #d4af37;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+    }
+    .newsletter-form button {
+      flex: 1 1 140px;
+      background: #d4af37;
+      border: none;
+      color: #0b0a0a;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 1rem 0.5rem;
+    }
+    .newsletter-form button:hover {
+      background: #e6c25e;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    }
+
+    /* ----- FOOTER RAFFINÉ ----- */
+    footer {
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      padding: 2.5rem 0 1.8rem;
+      margin-top: 1rem;
+      background: #0a0908;
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #a89f8c;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+    .footer-links a:hover {
+      color: #d4af37;
+    }
+
+    .footer-social i {
+      font-size: 1.8rem;
+      margin-left: 1.2rem;
+      color: #7a7265;
+      transition: 0.2s;
+    }
+    .footer-social i:hover {
+      color: #d4af37;
+      transform: scale(1.1);
+    }
+
+    .copyright {
+      text-align: center;
+      width: 100%;
+      margin-top: 1.8rem;
+      font-size: 0.95rem;
+      color: #5f584b;
+      letter-spacing: 2px;
+    }
+
+    /* ----- RESPONSIVE (design luxe adaptable) ----- */
+    @media (max-width: 900px) {
+      .hero-texte h1 {
+        font-size: 2.8rem;
+      }
+      .hero-sous-titre {
+        font-size: 1.3rem;
+      }
+      .header-flex {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      nav {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .menu-link {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .logo {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+      }
+      .hero-
